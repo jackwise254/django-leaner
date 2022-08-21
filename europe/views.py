@@ -1,7 +1,12 @@
+from urllib import request
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Trip
 
 # Create your views here.
 
-def index(response):
-    return HttpResponse('World trips')
+def index(request):
+    context = {
+        "trips": Trip.objects.all()
+    }
+    return render(request, 'trips/index.html', context)
