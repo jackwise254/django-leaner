@@ -1,19 +1,170 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="links\bootstrap\css\bootstrap.min.css">
+    <link rel="stylesheet" href="links\cdnjs\fontawesome.min.css">
+    <link rel="stylesheet" href="links\Lato\Lato-Regular.ttf">
+    <link rel="stylesheet" href="links\ionicons-2.0.1\css\ionicons.min.css">
+    <link rel="stylesheet" href="links\package\css\font-awesome.min.css">
+    <link rel="stylesheet" href="links\jquery\package\dist\jquery.slim.min.js">
+    <link rel="stylesheet" href="links\jquery\package\dist\jquery.min.js">
+    <link rel="stylesheet" href="links\bootstrap4\js\bootstrap.bundle.min.js">
+    <script src="links\bootstrap\bootstrap.bundle.min.js"></script>
+    <script src="links\cdnjs\jquery.min.js"></script>
+    <link rel="stylesheet" href="links\bootstrap\bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <title>Trips</title>
 </head>
 <body>
     <h4>
-        Day 1 As a python dev1
+        Recreating Madrassah with Django
     </h4>
-    <ul>
-        {% for trip in trips%}
-        {{trip}}
-        {% endfor %}
-    </ul>
+
+    <div class="table-responsive" style='height: 50vh;'>
+        <table class="table table-fixed" style='font-family:"Airal", Arial, Arial; font-size:80%'>
+            <thead>
+                <tr>
+                    <th  class="col-3">#</th>
+                    <th  class="col-3">Origin</th>
+                    <th  class="col-3">destination</th>
+                    <th  class="col-3">Nights</th>
+                    <th  class="col-3">Price</th>
+                    <th>
+                        <button type="button" class="btn btn-lg bi bi-plus" data-toggle="modal" data-target="#myModal" style='font-family:"Airal", Arial, Arial; font-size:100%'></button>
+                    </th>
+                </tr>
+            </thead>
+            
+            <tbody >
+                    {% for trip in trips%}
+                    <tr style='font-family:"Airal", Arial, Arial; font-size:80%'>
+                        <td class="col-3">{{trip.id}}</td>
+                        <td class="col-3">{{trip.origin}}</td>
+                        <td class="col-3">{{trip.destination}}</td>
+                        <td class="col-3">{{trip.nights}}</td>
+                        <td class="col-3">{{trip.price}}</td>
+                        <td class='row'>
+                            <div class="col">
+                                <a href="#" class="bi bi-pencil-square btn btn-sm " style='font-family:"Airal", Arial, Arial; font-size:80%'></a>
+                        
+                            </div>
+                            <div class="col">
+                                <a href="#" class="bi bi-file-x btn btn-sm" style='font-family:"Airal", Arial, Arial; font-size:80%'></a>
+
+                            </div>
+                        </td>
+                    </tr>
+                    {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
 </body>
+</html> -->
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>AFTAB</title>
+  {% load static %}
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="{% static 'css/style.css'%}" rel="stylesheet">
+</head>
+
+<body class='bg-secondary'>
+
+ <div class='bg-secondary'>
+ <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+  </header>
+
+  <section id="hero">
+    <div class="container ">
+      <div class="row justify-content-between">
+        <div class="col-lg-7 pt-5 pt-lg-0 order-2 order-lg-1 d-flex align-items-center">
+          <div data-aos="zoom-out">
+            <h1>Welcom to  <span>AFTAB</span></h1>
+            <h2>We offer the best international syllabus for muslims</h2>
+            
+            <form  class="auth-form login-form" action="#" method="post">
+              <div class="row">
+                  <div class="col-4">
+                    <select class="form-select" name='country' required>
+                        {% for center in trips%}
+                        <option value="{{center.country}}">{{center.country}}</option>
+                        {% endfor %}
+                    </select>
+                  </div>
+                  <div class="col-4">
+                    <select class="form-select" name='cname' required>
+                        {% for center in trips%}
+                        <option value="{{center.cname}}">{{center.cname}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-4">
+                  <div class="text-center">
+                    <button type="submit" class="btn btn-success">Select Center</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-lg-5 order-1 order-lg-2  hero-img" data-aos="zoom-out" data-aos-delay="300">
+            <img src= "{% static 'images/hero-img.svg' %}" alt="logo">
+          <!-- <img src="assets/img/hero-img.svg" class="" alt=""> -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+ </div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
 </html>
