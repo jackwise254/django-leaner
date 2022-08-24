@@ -6,10 +6,18 @@ from .landing import CenterForm
 
 # creating a landing page
 def landing_page(request):
+    if request.method == "POST":
+        land_pages = CenterForm(request.POST)
+        if land_pages.is_valid():
+            land_pages.save()
+            return redirect(reverse("tasks:task_list"))
+    else:
+        land_pages = CenterForm()
+
     land_page = Centers.objects.all()
     # land_page = get_object_or_404(Centers, pk=pk)
 
-    return render(request, "tasks/landing_page.html", {"land_page": land_page,}, )
+    return render(request, "tasks/landing_page.html", {"land_page": land_page, "land_pages":land_pages,}, )
 
 
 # Create your views here.
@@ -26,6 +34,12 @@ def task_create(request):
 
     return render(request, "tasks/task_form.html", { "form": form, })
 
+
+def login_create(request):
+    if request.method =='POST':
+        form = TaskForm(request.POST)
+        if form.is_valid():
+            form.save()
 
 # Retrieve task list
 def task_list(request):
