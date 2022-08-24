@@ -1,4 +1,4 @@
-from django.urls import path, re_path
+from django.urls import path, re_path, include
 from . import views
 
 # namespace
@@ -23,5 +23,8 @@ urlpatterns = [
 
     # Delete a task
     re_path(r'^(?P<pk>\d+)/delete/$', views.task_delete, name='task_delete'),
+
+    # login path
+    path("accounts/", include("django.contrib.auth.urls")),
 
 ]
